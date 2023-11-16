@@ -1,14 +1,16 @@
-<h1>List - Show page </h1>
+<h1> Here are the lists name </h1>
 
-<p><%= @list.name %></p>
+<h3>List name: <%= @list.name %></h3>
 
-<p><%= link_to "Back to Lists", lists_path %></p>
+<p><%= link_to "Back to all lists", lists_path %></p>
 
-<p><strong>Bookmarks</strong></p>
-
-<ul class="list-group">
-  <% @list.bookmarks.each do |bookmark| %>
-    <li class="list-group-item"> <%= bookmark.movie.title %> <br> <%= bookmark.comment %> </li>
-  <% end %>
-</ul>
-<br>
+<p> Number of list: <%= @list.bookmarks.count %></p>
+<% @list.bookmarks.each do |bookmark| %>
+  <div class="container border border-dark border-2 mt-3 mb-3 pt-3 pb-3">
+      <p><strong> Movie Title: </strong> <%= bookmark.movie.title %><p>
+      <p><strong> Movie Rating: </strong><%= bookmark.movie.rating %></p>
+      <p><strong> Movie Overview: </strong><%= bookmark.movie.overview %></p>
+      <%= image_tag bookmark.movie.poster_url, width: "200"%>
+  </div>
+  <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<% end %>
