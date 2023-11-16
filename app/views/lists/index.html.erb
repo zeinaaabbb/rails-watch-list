@@ -1,5 +1,7 @@
 <h3> Here are all the lists - index page </h3>
 
+<%= image_tag "image_film.jpg", alt: "Image of film clipboard ation", width: "200" %>
+
 <ol>
   <% @lists.each do |list| %>
     <li><%= link_to list.name, list_path(list) %></li>
