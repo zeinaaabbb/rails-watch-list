@@ -1,9 +1,16 @@
-<h3> Here are all the lists - index page </h3>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2659&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+  <div class="container">
+   <h1> Here are all the lists - index page </h1>
+  </div>
+</div>
 
-<%= image_tag "image_film.jpg", alt: "Image of film clipboard ation", width: "200" %>
 
-<ol>
+
+
+<ol class= "mb-5">
   <% @lists.each do |list| %>
     <li><%= link_to list.name, list_path(list) %></li>
   <% end %>
 <ol>
+
+<p class="btn btn-outline-primary"><%= link_to "Create a movie list", new_list_path %></p>

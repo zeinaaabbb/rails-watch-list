@@ -1,0 +1,12 @@
+.movie-card {
+  background-color: rgb(215,223,233) ;
+  border-style: solid;
+  border-radius: 25px;
+  box-shadow: 10px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
